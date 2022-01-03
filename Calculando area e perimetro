@@ -1,0 +1,45 @@
+#Classe Retangulo: Crie uma classe que modele um retangulo:
+
+#Atributos: LadoA, LadoB (ou Comprimento e Largura, ou Base e Altura, a escolher)
+#Métodos: Mudar valor dos lados, Retornar valor dos lados, calcular Área e calcular Perímetro;
+
+#Crie um programa que utilize esta classe. Ele deve pedir ao usuário que informe as medidades de um local.
+
+##########################################################################################################
+
+class Retangulo:
+    def __init__(self, base, altura):
+        self.base = base
+        self.altura = altura
+
+    def mudar_base(self, nova_base):
+        self.base = nova_base
+
+    def mudar_altura(self, nova_altura):
+        self.altura = nova_altura
+
+    @property
+    def mostra_lados(self):
+        return self.base, self.altura
+
+
+    def calcula_area(self):
+        area = self.base * self.altura
+        return area
+
+    #O perímetro do retângulo é obtido a partir da soma de todas as medidas dos quatro lados que constituem o retângulo
+    def mostra_perimetro(self):
+        perimetro = (self.base * 2) + (self.altura * 2)
+        return perimetro
+
+base = int(input("Digite o valor da base do retangulo "))
+altura = int(input("Digite o valor da altura do retangulo "))
+
+
+ret1 = Retangulo(base, altura)
+
+print(f"Baseado nessas medidas, o seu retangulo tem {ret1.mostra_perimetro()} de perimetro")
+print(f"Baseado nessas medidas, o seu retangulo tem {ret1.calcula_area()} de area")
+
+
+
